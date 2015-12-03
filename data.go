@@ -32,8 +32,10 @@ type Data struct {
 	AlertFlg        string `json:"alertflg"`
 }
 
+// Bool represents bool.  It can unmarshal "" as false in JSON.
 type Bool bool
 
+// UnmarshalJSON unmarshal Bool value.  It can unmarshal "" as false.
 func (b *Bool) UnmarshalJSON(v []byte) error {
 	s := string(v)
 	switch s {
