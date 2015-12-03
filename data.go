@@ -26,7 +26,7 @@ type Data struct {
 		Hash  string `json:"hash"`
 	} `json:"security"`
 	Maginitude      string `json:"magunitude"`
-	ReportNum       string `json:"report_time"`
+	ReportNum       string `json:"report_num"`
 	RequestHypoType string `json:"request_hypo_type"`
 	ReportID        string `json:"report_id"`
 	AlertFlg        string `json:"alertflg"`

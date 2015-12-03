@@ -41,6 +41,12 @@ func TestLoadJSON(t *testing.T) {
 	if !d.IsFinal {
 		t.Fatal("IsFinal should be true:", d.IsFinal)
 	}
+	if d.ReportTime != "2015/12/02 01:08:08" {
+		t.Errorf("ReportTime unmatch: %s", d.ReportTime)
+	}
+	if d.ReportNum != "4" {
+		t.Errorf("ReportNum unmatch: %s", d.ReportNum)
+	}
 }
 
 func TestLoadEmptyJSON(t *testing.T) {
