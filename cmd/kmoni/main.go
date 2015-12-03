@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/koron/go-kmoni"
@@ -28,11 +29,19 @@ func put(d *kmoni.Data) {
 }
 
 func main() {
+	retry := 0
 	for {
 		d, err := kmoni.Now()
 		if err != nil {
-			panic(err)
+			if retry >= 3 {
+				panic(err)
+			}
+			retry++
+			log.Printf("INFO: retry#%d for: %s", retry, err.Error())
+			time.Sleep(5 * time.Second)
+			continue
 		}
+		retry = 0
 		put(d)
 		time.Sleep(5 * time.Second)
 	}
