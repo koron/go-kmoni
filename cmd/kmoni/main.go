@@ -29,6 +29,7 @@ func put(d *kmoni.Data) {
 }
 
 func main() {
+	var last *kmoni.Data
 	retry := 0
 	for {
 		d, err := kmoni.Now()
@@ -42,7 +43,10 @@ func main() {
 			continue
 		}
 		retry = 0
-		put(d)
+		if !d.Equals(last) {
+			put(d)
+			last = d
+		}
 		time.Sleep(5 * time.Second)
 	}
 }

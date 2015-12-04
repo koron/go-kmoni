@@ -32,6 +32,14 @@ type Data struct {
 	AlertFlg        string `json:"alertflg"`
 }
 
+// Equals checks equality of two Data.
+func (d *Data) Equals(t *Data) bool {
+	if t == nil {
+		return false
+	}
+	return d.ReportID == t.ReportID && d.ReportNum == t.ReportNum && d.IsFinal == t.IsFinal
+}
+
 // Bool represents bool.  It can unmarshal "" as false in JSON.
 type Bool bool
 
