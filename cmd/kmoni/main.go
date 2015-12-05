@@ -35,10 +35,9 @@ func main() {
 		d, err := kmoni.Now()
 		if err != nil {
 			if retry >= 3 {
-				panic(err)
+				log.Fatalf("ERROR: much retry: %s", err.Error())
 			}
 			retry++
-			log.Printf("INFO: retry#%d for: %s", retry, err.Error())
 			time.Sleep(5 * time.Second)
 			continue
 		}
