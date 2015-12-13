@@ -20,6 +20,9 @@ func Fetch(t time.Time) (*Data, error) {
 		return nil, err
 	}
 	defer resp.Body.Close()
+	if resp.StatusCode != 200 {
+		return nil, fmt.Errorf("kmoni server failure: %d", resp.StatusCode)
+	}
 	// parse JSON
 	var d Data
 	if err := json.NewDecoder(resp.Body).Decode(&d); err != nil {

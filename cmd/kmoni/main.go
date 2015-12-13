@@ -38,6 +38,7 @@ func main() {
 				log.Fatalf("ERROR: much retry: %s", err.Error())
 			}
 			retry++
+			log.Printf("INFO: #%d %s", retry, err.Error())
 			time.Sleep(5 * time.Second)
 			continue
 		}
