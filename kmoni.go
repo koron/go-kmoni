@@ -42,5 +42,5 @@ func jst() *time.Location {
 
 func url(hypo string, t time.Time) string {
 	s := t.In(jst()).Format("20060102150405")
-	return fmt.Sprintf("http://www.kmoni.bosai.go.jp/new/webservice/hypo/%s/%s.json", hypo, s)
+	return fmt.Sprintf("http://www.kmoni.bosai.go.jp/webservice/hypo/%s/%s.json", hypo, s)
 }
