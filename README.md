@@ -1,6 +1,6 @@
 # kmoni - Kyoushin Monitor
 
-Kyoushin Monitor ([新強震モニタ](http://www.kmoni.bosai.go.jp/new/)) is one of
+Kyoushin Monitor ([強震モニタ](http://www.kmoni.bosai.go.jp/)) is one of
 earthquake monitors in Japan.  When it detects an earthquake, then reports data
 of that.
 
