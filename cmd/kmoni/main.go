@@ -1,8 +1,11 @@
 package main
 
 import (
+	"encoding/json"
+	"flag"
 	"fmt"
 	"log"
+	"os"
 	"time"
 
 	"github.com/koron/go-kmoni"
@@ -22,13 +25,24 @@ func data2str(d *kmoni.Data) string {
 
 func put(d *kmoni.Data) {
 	s := data2str(d)
-	if s == "" {
-		return
+	if s != "" {
+		fmt.Println(s)
 	}
-	fmt.Println(s)
+	if debug {
+		enc := json.NewEncoder(os.Stdout)
+		enc.SetIndent("", "  ")
+		enc.Encode(d)
+	}
 }
 
+var (
+	debug bool
+)
+
 func main() {
+	flag.BoolVar(&debug, "debug", false, `output the response JSON`)
+	flag.Parse()
+
 	var last *kmoni.Data
 	retry := 0
 	for {

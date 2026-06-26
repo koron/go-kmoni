@@ -1,3 +1,5 @@
+// Package kmoni provides functionality to access the Japanese big earthquake
+// monitor API.
 package kmoni
 
 import (
