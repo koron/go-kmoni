@@ -2,7 +2,6 @@
 
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/koron/go-kmoni)](https://pkg.go.dev/github.com/koron/go-kmoni)
 [![Actions/Go](https://github.com/koron/go-kmoni/actions/workflows/go.yml/badge.svg)](https://github.com/koron/go-kmoni/actions/workflows/go.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/koron/go-kmoni)](https://goreportcard.com/report/github.com/koron/go-kmoni)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/koron/go-kmoni)
 
 Kyoushin Monitor ([強震モニタ](http://www.kmoni.bosai.go.jp/)) is one of
